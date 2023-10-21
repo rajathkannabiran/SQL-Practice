@@ -1,0 +1,4 @@
+select distinct city, length(city) from station
+order by 2 limit 1;
+select distinct city, length(city) from station
+order by 2 DESC limit 1;
