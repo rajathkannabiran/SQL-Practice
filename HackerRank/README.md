@@ -33,4 +33,8 @@
 33. [weather-observation-station-15](https://www.hackerrank.com/challenges/weather-observation-station-15/problem?isFullScreen=true)
 34. [weather-observation-station-16](https://www.hackerrank.com/challenges/weather-observation-station-16/problem?isFullScreen=true)
 35. [weather-observation-station-17](https://www.hackerrank.com/challenges/weather-observation-station-17/problem?isFullScreen=true)
-
+36. [Population Census](https://www.hackerrank.com/challenges/asian-population/problem?isFullScreen=true)
+37. [African Cities](https://www.hackerrank.com/challenges/african-cities/problem?isFullScreen=true)
+38. [Average-Population-of-Each-Continent](https://www.hackerrank.com/challenges/average-population-of-each-continent/problem?isFullScreen=true)
+39. [Draw-the-Triangle-1](https://www.hackerrank.com/challenges/draw-the-triangle-1/problem?isFullScreen=true)
+40. Draw-the-Triangle-2](https://www.hackerrank.com/challenges/draw-the-triangle-2/problem?isFullScreen=true)
