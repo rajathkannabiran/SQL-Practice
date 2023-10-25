@@ -37,4 +37,4 @@
 37. [African Cities](https://www.hackerrank.com/challenges/african-cities/problem?isFullScreen=true)
 38. [Average-Population-of-Each-Continent](https://www.hackerrank.com/challenges/average-population-of-each-continent/problem?isFullScreen=true)
 39. [Draw-the-Triangle-1](https://www.hackerrank.com/challenges/draw-the-triangle-1/problem?isFullScreen=true)
-40. Draw-the-Triangle-2](https://www.hackerrank.com/challenges/draw-the-triangle-2/problem?isFullScreen=true)
+40. [Draw-the-Triangle-2](https://www.hackerrank.com/challenges/draw-the-triangle-2/problem?isFullScreen=true)
