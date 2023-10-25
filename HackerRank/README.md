@@ -26,3 +26,11 @@
 26. [japan-population](https://www.hackerrank.com/challenges/japan-population/problem?isFullScreen=true)
 27. [population-density-difference](https://www.hackerrank.com/challenges/population-density-difference/problem?isFullScreen=true)
 28. [The Blunder](https://www.hackerrank.com/challenges/the-blunder/problem?isFullScreen=true)
+29. [Top Earners](https://www.hackerrank.com/challenges/earnings-of-employees/problem?isFullScreen=true)
+30. [weather-observation-station-2](https://www.hackerrank.com/challenges/weather-observation-station-2/problem?isFullScreen=true)
+31. [weather-observation-station-13](https://www.hackerrank.com/challenges/weather-observation-station-13/problem?isFullScreen=true)
+32. [weather-observation-station-14](https://www.hackerrank.com/challenges/weather-observation-station-14/problem?isFullScreen=true)
+33. [weather-observation-station-15](https://www.hackerrank.com/challenges/weather-observation-station-15/problem?isFullScreen=true)
+34. [weather-observation-station-16](https://www.hackerrank.com/challenges/weather-observation-station-16/problem?isFullScreen=true)
+35. [weather-observation-station-17](https://www.hackerrank.com/challenges/weather-observation-station-17/problem?isFullScreen=true)
+
