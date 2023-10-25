@@ -25,3 +25,4 @@
 25. [average-population](https://www.hackerrank.com/challenges/average-population/problem?isFullScreen=true)
 26. [japan-population](https://www.hackerrank.com/challenges/japan-population/problem?isFullScreen=true)
 27. [population-density-difference](https://www.hackerrank.com/challenges/population-density-difference/problem?isFullScreen=true)
+28. [The Blunder](https://www.hackerrank.com/challenges/the-blunder/problem?isFullScreen=true)
