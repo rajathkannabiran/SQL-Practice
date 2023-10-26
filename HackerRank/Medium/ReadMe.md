@@ -4,5 +4,5 @@
 4. [The Company](https://www.hackerrank.com/challenges/the-company/problem?isFullScreen=true)
 5. [weather-observation-station-18](https://www.hackerrank.com/challenges/weather-observation-station-18/problem?isFullScreen=true)
 6. [weather-observation-station-19](https://www.hackerrank.com/challenges/weather-observation-station-19/problem?isFullScreen=true)
-7. [weather-observation-station-20]()https://www.hackerrank.com/challenges/weather-observation-station-20/problem?isFullScreen=true)
+7. [weather-observation-station-20](https://www.hackerrank.com/challenges/weather-observation-station-20/problem?isFullScreen=true)
 8. []()
