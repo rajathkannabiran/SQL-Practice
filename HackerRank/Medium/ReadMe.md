@@ -1,7 +1,7 @@
 1. [Occupations](https://www.hackerrank.com/challenges/occupations/problem?isFullScreen=true)
 2. [The PADS](https://www.hackerrank.com/challenges/the-pads/problem?isFullScreen=true)
 3. [Binary Search Tree](https://www.hackerrank.com/challenges/binary-search-tree-1/problem?isFullScreen=true)
-4. [The Company](https://www.hackerrank.com/challenges/the-company/problem?isFullScreen=true)
+4. [New Company](https://www.hackerrank.com/challenges/the-company/problem?isFullScreen=true)
 5. [weather-observation-station-18](https://www.hackerrank.com/challenges/weather-observation-station-18/problem?isFullScreen=true)
 6. [weather-observation-station-19](https://www.hackerrank.com/challenges/weather-observation-station-19/problem?isFullScreen=true)
 7. [weather-observation-station-20](https://www.hackerrank.com/challenges/weather-observation-station-20/problem?isFullScreen=true)
