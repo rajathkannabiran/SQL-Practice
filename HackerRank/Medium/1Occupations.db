@@ -1,0 +1,12 @@
+select 
+    min(case when occupation='Doctor' then Name end),
+    min(case when occupation='Professor' then Name end),
+    min(case when occupation='Singer' then Name end),
+    min(case when occupation='Actor' then Name end)
+from (
+    select
+        name, 
+        occupation,
+        row_number() over(partition by occupation order by name) as rn
+    from occupations) oc 
+group by oc.rn;
