@@ -1,6 +1,4 @@
-# SQL-Practice
-
-SQL Problem solving:
+# SQL Problem Solving:
 
 1. HackerRank
 2. Leetcode
