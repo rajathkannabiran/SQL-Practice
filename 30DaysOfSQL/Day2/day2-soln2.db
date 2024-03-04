@@ -1,0 +1,12 @@
+
+-- soln 2
+
+with cte as (
+	Select case when mt1.altitude > mt2.altitude then mt1.name else mt2.name end as st_name,
+	case when mt1.altitude < mt2.altitude then mt1.name else mt2.name end as md_name
+	from trails t
+	join mountain_huts mt1 on t.hut1 = mt1.id
+	join mountain_huts mt2 on t.hut2 = mt2.id)
+select c1.st_name as startpt, c1.md_name as middlept, c2.md_name as endp 
+from cte c1
+join cte c2 on c1.md_name = c2.st_name;
