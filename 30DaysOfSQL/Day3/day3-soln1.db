@@ -1,0 +1,8 @@
+-- cross join will map each and every row of one table to each and every row of the other table
+-- since we are having just one value, our end table will have just one row
+
+select *
+from (select car from footer where car is not null order by id desc limit 1) car
+cross join (select length from footer where length is not null order by id desc limit 1) len
+cross join (select width from footer where width is not null order by id desc limit 1) wid
+cross join (select height from footer where height is not null order by id desc limit 1) h
