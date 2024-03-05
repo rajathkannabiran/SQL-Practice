@@ -15,12 +15,3 @@ select
 from cte 
 order by id desc
 limit 1;
-
-
-
--- Solution 2:
-select *
-from (SELECT car FROM FOOTER where car is not null order by id desc limit 1) car
-cross join (SELECT length FROM FOOTER where length is not null order by id desc limit 1) length
-cross join (SELECT width FROM FOOTER where width is not null order by id desc limit 1) width
-cross join (SELECT height FROM FOOTER where height is not null order by id desc limit 1) height;
