@@ -1,0 +1,8 @@
+-- This will fetch id = 1 row
+select min(id) id, min(name) name, min(location) location
+from q4_data;
+
+
+-- This will fetch id = 5 row
+select max(id) id, min(name) name, min(location) location
+from q4_data;
