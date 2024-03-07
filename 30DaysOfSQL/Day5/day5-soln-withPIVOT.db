@@ -1,0 +1,32 @@
+-- SOLUTION Microsoft SQL Server (Similar works for Oracle too, just replace [] with "")
+
+-- syntax
+--from 
+  --  (
+  --      select first column, list if columns, col values (min. 3 columns)
+  --      from emp_transaction t
+  --      
+  --  ) b
+--pivot 
+  --  (
+  --      agg function
+  --      list of resulting columns
+  --  ) p;
+
+select Employee
+, Basic, Allowance, Others
+, (Basic + Allowance + Others) as Gross
+, Insurance, Health, House
+, (Insurance + Health + House) as Total_Deductions
+, ((Basic + Allowance + Others) - (Insurance + Health + House)) as Net_Pay
+from 
+    (
+        select t.emp_name as Employee, t.trns_type, t.amount
+        from emp_transaction t
+        
+    ) b
+pivot 
+    (
+        sum(amount)
+        for trns_type in ([Allowance],[Basic],[Health],[House],[Insurance],[Others])
+    ) p;
