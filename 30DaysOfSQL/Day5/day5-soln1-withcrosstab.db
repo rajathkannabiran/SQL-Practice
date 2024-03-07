@@ -1,0 +1,33 @@
+
+-- case when x.trns_type = 'Basic' then round(base_salary * (cast(x.percentage as decimal)/100),2)
+-- 	   when x.trns_type = 'Allowance' then round(base_salary * (cast(x.percentage as decimal)/100),2)
+-- 	   when x.trns_type = 'Others' then round(base_salary * (cast(x.percentage as decimal)/100),2)
+-- 	   when x.trns_type = 'Insurance' then round(base_salary * (cast(x.percentage as decimal)/100),2)
+-- 	   when x.trns_type = 'Health' then round(base_salary * (cast(x.percentage as decimal)/100),2)
+-- 	   when x.trns_type = 'House' then round(base_salary * (cast(x.percentage as decimal)/100),2) end as amount
+			
+insert into emp_transaction
+select s.emp_id, s.emp_name, x.trns_type
+, case when x.trns_type is not null then round(base_salary * (cast(x.percentage as decimal)/100),2)
+  end amount
+from salary s
+cross join (select income as trns_type, percentage from income
+			union
+			select deduction as trns_type, percentage from deduction) x;
+			
+-- Building the Report
+-- create extension tablefunc;
+
+
+select employee
+, basic, allowance, others
+, (basic + allowance + others) as gross
+, insurance, health, house 
+, (insurance + health + house) as total_deductions
+, (basic + allowance + others) - (insurance + health + house) as net_pay
+from crosstab('select emp_name, trns_type, amount
+			   from emp_transaction
+			   order by emp_name, trns_type'
+			  ,'select distinct trns_type from emp_transaction order by trns_type')
+	as result(employee varchar, Allowance numeric, basic numeric, health numeric
+			 , house numeric, insurance numeric, others numeric)
