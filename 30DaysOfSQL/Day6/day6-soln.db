@@ -1,0 +1,34 @@
+-- OUTPUT 1
+
+-- with cte as
+-- 		(select *
+-- 		, rank() over(partition by marks order by test_id) as rnk
+-- 		FROM student_tests
+-- 		order by test_id),
+     
+-- 	 cte_dif as
+-- 		(select *
+-- 		, marks - lag(marks, 1, 0) over() as diff
+-- 		from cte
+-- 		where rnk=1)
+
+-- select test_id, marks from cte_dif
+-- where diff > 0
+
+
+-- OUTPUT 1:
+
+select test_id, marks from
+	(select * 
+	, lag(marks, 1, 0) over() as prev_marks
+	 from student_tests) f
+where f.marks > f.prev_marks
+
+
+-- OUTPUT 2:
+
+select test_id, marks from
+	(select * 
+	, lag(marks, 1, marks) over() as prev_marks
+	 from student_tests) f
+where f.marks > f.prev_marks
