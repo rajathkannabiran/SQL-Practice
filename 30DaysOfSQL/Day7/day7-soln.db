@@ -1,0 +1,8 @@
+select product_id, day_indicator, dates
+from (
+	select *
+	, extract('isodow' from dates) as dow
+	, case when substring(day_indicator, extract('isodow' from dates)::int, 1) = '1'
+	  then 'Include' else 'Exlcude' end as dummy
+	from day_indicator)
+where dummy = 'Include'
