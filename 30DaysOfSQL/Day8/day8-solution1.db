@@ -1,0 +1,11 @@
+
+-- SOLUTION 1
+with cte as 
+	(select *
+	, sum(case when job_role is null then 0 else 1 end) over(order by row_id) as seg
+	from job_skills)
+
+select row_id, skills
+, first_value(job_role) over(partition by seg) as job_role
+, skills
+from cte

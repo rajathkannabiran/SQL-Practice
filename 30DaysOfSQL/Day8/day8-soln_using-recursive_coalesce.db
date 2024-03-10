@@ -1,0 +1,17 @@
+-- RECURSIVE QUERY SYNTAX
+
+-- with recursive cte as (
+-- 		select base query,
+-- 			   union
+-- 			   recursive query with termination condition
+-- )
+-- select * from cte;
+
+with recursive cte as
+	(select *
+	 from job_skills where row_id = 1
+	 union 
+	 select js.row_id, coalesce(js.job_role, cte.job_role) as job_role, js.skills
+	 from cte 
+	 join job_skills js on js.row_id = cte.row_id+1)
+select * from cte;
