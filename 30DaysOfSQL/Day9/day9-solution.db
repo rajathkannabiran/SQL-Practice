@@ -1,0 +1,7 @@
+select dates, cast(product_id as varchar)
+from orders
+union
+select distinct dates
+, string_agg(cast(product_id as varchar), ',') over(partition by dates, customer_id) as prod
+from orders
+order by dates, product_id
