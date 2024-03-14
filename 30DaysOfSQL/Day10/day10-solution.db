@@ -1,0 +1,13 @@
+select velocity
+, coalesce(good, 0)
+, coalesce(wrong, 0)
+, coalesce(regular, 0)
+from crosstab(' select v.value, l.value as level, count(1) as value
+				from auto_repair l
+				join auto_repair v on l.client = v.client and l.auto = v.auto and l.repair_date = v.repair_date
+				where l.indicator = ''level''
+				and v.indicator = ''velocity''
+				group by v.value, l.value'
+			 ,'select distinct value from auto_repair where indicator = ''level''')
+    as result(velocity varchar, good bigint, wrong bigint, regular bigint)
+order by velocity
