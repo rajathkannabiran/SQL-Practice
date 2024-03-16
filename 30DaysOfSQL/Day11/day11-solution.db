@@ -1,0 +1,13 @@
+with cte as 
+		(select *
+		, abs(rating - round(avg(rating) over(partition by hotel),2))  as diff
+		from hotel_ratings
+		),
+	cte_2 as 
+		(select *
+		, max(diff) over(partition by hotel) as maxi
+		from cte)
+
+select hotel, year, rating from cte_2
+where diff != maxi
+order by hotel desc, year
