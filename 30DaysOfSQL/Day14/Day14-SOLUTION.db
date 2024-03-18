@@ -1,0 +1,22 @@
+
+select * from invoice;
+
+-- Solution 1: (Using generate_series)
+select generate_series(min(serial_no), max(serial_no)) AS missing_serial_no
+from invoice
+except 
+select serial_no from invoice
+order by 1;
+
+-- Solution 2: (Using recursion)
+with recursive cte as
+	(select min(serial_no) as n from invoice 
+	union
+	select n+1 as n
+	from cte 
+	where n < (select max(serial_no) from invoice)
+	)
+select n as missing_serial_no from cte	 
+except 
+select serial_no from invoice
+order by 1;
