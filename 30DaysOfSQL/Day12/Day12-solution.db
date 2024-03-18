@@ -1,0 +1,15 @@
+with recursive cte as (
+	select employee, manager, row_number() over () as x
+	from company 
+	where manager = (select employee from company where manager is null)
+	union all 
+	select d.employee, d.manager, x 
+	from cte c 
+	join company d on c.employee = d.manager)
+
+select concat('Team', x) as teams,  string_agg(manager, ',') as members 
+from (select manager, x
+	  from cte 
+	  union 
+	  select employee, x from cte) y
+group by x order by x;
