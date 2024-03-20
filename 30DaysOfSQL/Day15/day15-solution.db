@@ -1,0 +1,12 @@
+with all_friends as
+	(SELECT friend1,friend2 FROM Friends
+	union 
+	SELECT friend2 ,friend1 FROM Friends)
+select f.friend1, f.friend2, count(cf.friend2)
+from friends f 
+left join all_friends cf 
+on f.friend1 = cf.friend1
+and cf.friend2 in ( select cf2.friend2
+					from all_friends cf2
+					where f.friend2 = cf2.friend1)
+group by f.friend1, f.friend2;
