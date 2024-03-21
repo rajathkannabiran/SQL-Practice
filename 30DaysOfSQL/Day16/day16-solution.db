@@ -1,0 +1,13 @@
+with cte as
+		(select distinct extract(month from dates) as month
+		, sum(cases_reported) over(partition by extract(month from dates)) as sumo
+		from covid_cases),
+	cte_final as
+		(select *
+		, sum(sumo) over(order by month) as cum_sum
+		from cte)
+select *
+, case when month > 1 then cast(round((sumo/lag(cum_sum) over())*100, 1) as varchar) else '-'
+       end as percentage
+from cte_final
+
