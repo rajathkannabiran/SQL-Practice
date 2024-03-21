@@ -1,0 +1,14 @@
+
+with cte as
+		(select *
+		, dense_rank() over(partition by user_id order by login_date) as rnk
+		, login_date - cast(dense_rank() over(partition by user_id order by login_date) as int) as date_group
+		from user_login)
+select user_id, date_group --count(1)
+, min(login_date)
+, max(login_date)
+, max(login_date) - min(login_date) + 1
+from cte
+group by date_group, user_id
+having max(login_date) - min(login_date) + 1 >= 5
+order by user_id
