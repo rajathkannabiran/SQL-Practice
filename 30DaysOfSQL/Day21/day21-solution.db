@@ -1,0 +1,12 @@
+with cte as 
+		(select us.session_id, us.user_id, pv.post_id
+		, us.session_starttime, us.session_endtime, extract('epoch' from us.session_endtime-us.session_starttime) as time
+		, pv.perc_viewed
+		from user_sessions us
+		join post_views pv on pv.session_id = us.session_id)
+
+select post_id
+, sum(time*perc_viewed/100) as post_time
+from cte
+group by post_id
+having sum(time*perc_viewed/100) > 5
