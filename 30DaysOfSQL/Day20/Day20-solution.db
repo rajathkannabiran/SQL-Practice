@@ -1,0 +1,10 @@
+
+with cte as 
+		(select country, age
+		, rank() over(partition by country order by age) as rnk
+		, count(*) over(partition by country) as total
+		from people)
+
+select country, age
+from cte
+where rnk >= total::decimal/2 and rnk <= (total::decimal/2+1)
